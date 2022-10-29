@@ -42,6 +42,6 @@ or download the
 [reference manual](https://cran.r-project.org/package=fGarch/fGarch.pdf)
 of the latest release from CRAN.
 
-
-
+A comprehensive overview of the models and conditional distributions employed in package
+`fGarch`, along with worked examples, is available in the following paper:
 [WurtzEtAlGarch.pdf](https://github.com/GeoBosh/fGarchDoc/blob/master/WurtzEtAlGarch.pdf)
