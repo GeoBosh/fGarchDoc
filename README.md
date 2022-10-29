@@ -50,4 +50,4 @@ authors of the package:
 
 (*This is an unpublished manuscript. Some online sources, confusingly, attribute it to JSS,
 vol 55, issue 2, but this seems to have taken the place holders `VV` and `II` in the heading
-on the first page as being Roman for the numbers 55 and 2.*)
+on the first page as being the Roman numbers 55 and 2.*)
