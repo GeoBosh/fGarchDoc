@@ -41,3 +41,7 @@ You can view the documentation of `fGarch` at
 or download the
 [reference manual](https://cran.r-project.org/package=fGarch/fGarch.pdf)
 of the latest release from CRAN.
+
+
+
+[WurtzEtAlGarch.pdf](https://github.com/GeoBosh/fGarchDoc/blob/master/WurtzEtAlGarch.pdf)
