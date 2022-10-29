@@ -76,7 +76,7 @@
         </code></pre></div>
     
     
-<p>The next three sections return the estimated coefficients, and
+<p>The next three sections return the estimated coefficients and
     an error analysis including standard errors, t values, and
     probabilities, as well as the log Likelihood values from 
     optimization:</p>    
@@ -142,50 +142,50 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  data ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563673f55020&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7dc2dc298&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = x]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  norm </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coefficient(s):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          mu        omega       alpha1        beta1  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> -1.6576e-04   2.4994e-06   9.7539e-02   6.2623e-01  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         mu       omega      alpha1       beta1  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2.5896e-04  4.1606e-07  1.1732e-01  8.2562e-01  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Std. Errors:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  based on Hessian </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error Analysis:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          Estimate  Std. Error  t value Pr(&gt;|t|)   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mu     -1.658e-04   2.125e-04   -0.780  0.43545   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> omega   2.499e-06   1.889e-06    1.323  0.18586   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> alpha1  9.754e-02   6.893e-02    1.415  0.15707   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> beta1   6.262e-01   2.364e-01    2.649  0.00808 **</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         Estimate  Std. Error  t value Pr(&gt;|t|)    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mu     2.590e-04   1.723e-04    1.503   0.1328    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> omega  4.161e-07   3.378e-07    1.232   0.2181    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> alpha1 1.173e-01   5.679e-02    2.066   0.0388 *  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> beta1  8.256e-01   7.644e-02   10.801   &lt;2e-16 ***</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Log Likelihood:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  878.9484    normalized:  4.394742 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  904.4709    normalized:  4.522355 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:56 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:58 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Standardised Residuals Tests:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                 Statistic p-Value  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Jarque-Bera Test   R    Chi^2  1.891722  0.388345 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Shapiro-Wilk Test  R    W      0.9916195 0.3036708</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R    Q(10)  9.620188  0.4744229</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R    Q(15)  18.66545  0.2292963</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R    Q(20)  21.52999  0.3665491</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R^2  Q(10)  9.695337  0.4676167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R^2  Q(15)  13.48398  0.564969 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R^2  Q(20)  20.63219  0.4190582</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  LM Arch Test       R    TR^2   9.646792  0.6469161</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Jarque-Bera Test   R    Chi^2  0.2185727 0.8964737</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Shapiro-Wilk Test  R    W      0.9979898 0.997206 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R    Q(10)  2.094741  0.9955611</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R    Q(15)  7.772207  0.93259  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R    Q(20)  18.3001   0.5676465</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R^2  Q(10)  9.368209  0.4975518</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R^2  Q(15)  15.03517  0.4488868</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Ljung-Box Test     R^2  Q(20)  18.64784  0.5448116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  LM Arch Test       R    TR^2   13.17633  0.3563554</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Information Criterion Statistics:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       AIC       BIC       SIC      HQIC </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> -8.749484 -8.683518 -8.750263 -8.722789 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -9.004709 -8.938743 -9.005489 -8.978014 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>

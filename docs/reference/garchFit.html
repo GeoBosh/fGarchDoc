@@ -142,10 +142,10 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <dd><p>optional character string with a brief description.</p></dd>
 
     <dt>formula</dt>
-<dd><p><code><a href="https://rdrr.io/r/stats/formula.html" class="external-link">formula</a></code> object describing the mean and variance equation of the
+<dd><p><code><a href="methods-formula.html">formula</a></code> object describing the mean and variance equation of the
         ARMA-GARCH/APARCH model.  A pure GARCH(1,1) model is selected
         e.g., for <code>formula = ~garch(1,1)</code>.  To specify an
-        ARMA(2,1)-APARCH(1,1) process, use <code> ~ arma(2,1) + apaarch(1,1)</code>.</p></dd>
+        ARMA(2,1)-APARCH(1,1) process, use <code> ~ arma(2,1) + aparch(1,1)</code>.</p></dd>
 
     <dt>gamma</dt>
 <dd><p>APARCH leverage parameter entering into the formula for calculating
@@ -162,6 +162,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
       parameter for the recursion equation <code>delta</code> will be estimated
       or not.  If false, the shape parameter will be kept fixed during the
       process of parameter optimization.</p></dd>
+
 
     <dt>include.mean</dt>
 <dd><p>this flag determines if the parameter for the mean will be estimated
@@ -209,65 +210,6 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 
 </dl></div>
     <div class="section level2">
-    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p></p>
-<p><code>garchFit</code></p>
-
-
-<p>returns a S4 object of class <code>"fGARCH"</code> with the following slots:</p>
-<dl><dt>@call</dt>
-<dd><p>the call of the <code>garch</code> function.</p></dd>
-
-    <dt>@formula</dt>
-<dd><p>a list with two formula entries, one for the mean and the other
-        one for the variance equation.</p></dd>
-
-    <dt>@method</dt>
-<dd><p>a string denoting the optimization method, by default the
-        returneds string is "Max Log-Likelihood Estimation".</p></dd>
-
-    <dt>@data</dt>
-<dd><p>a list with one entry named <code>x</code>, containing the data of
-        the time series to be estimated, the same as given by the
-        input argument <code>series</code>.</p></dd>
-
-    <dt>@fit</dt>
-<dd><p>a list with the results from the parameter estimation. The entries
-        of the list depend on the selected algorithm, see below.</p></dd>
-
-    <dt>@residuals</dt>
-<dd><p>a numeric vector with the (raw, unstandardized) residual values.</p></dd>
-
-    <dt>@fitted</dt>
-<dd><p>a numeric vector with the fitted values.</p></dd>
-
-    <dt>@h.t</dt>
-<dd><p>a numeric vector with the conditional variances
-        (\(h_t = \sigma_t^\delta\)).</p></dd>
-
-    <dt>@sigma.t</dt>
-<dd><p>a numeric vector with the conditional standard deviation.</p></dd>
-
-    <dt>@title</dt>
-<dd><p>a title string.</p></dd>
-
-    <dt>@description</dt>
-<dd><p>a string with a brief description.</p></dd>
-
-
-</dl><p>The entries of the @fit slot show the results from the
-    optimization.</p>
-<p></p>
-<p><code>.gogarchFit()</code> :
-    Similar definition for GO-GARCH modeling.  Here, <code>data</code> must be</p>
-<p></p>
-<p><em>multivariate</em>.
-    Still “preliminary”, mostly undocumented, and untested(!).
-    At least mentioned here...</p>
-
-
-    </div>
-    <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><code>"QMLE"</code> stands for Quasi-Maximum Likelihood Estimation, which
     assumes normal distribution and uses robust standard errors for
@@ -288,6 +230,23 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
     and \(\zeta_{i}\) is the i-th estimated parameter. See
     sections 10.3 and 10.4 in Davidson and MacKinnon (2004) for a more
     detailed description of the robust variance-covariance matrix.</p>
+    </div>
+    <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    
+
+
+<p>for <code>garchFit</code>, an S4 object of class <code>"<a href="class-fGARCH.html">fGARCH</a>"</code>.
+  Slot <code>@fit</code> contains the results from the optimization.</p>
+
+
+<p>for <code>.gogarchFit()</code>: Similar definition for GO-GARCH modeling.
+  Here, <code>data</code> must be <em>multivariate</em>.  Still</p>
+<p></p>
+<p>“preliminary”, mostly undocumented, and untested(!).  At least
+  mentioned here...</p>
+
+
     </div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
@@ -339,7 +298,8 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><code><a href="garchSpec.html">garchSpec</a></code>,
-  <code><a href="garchFitControl.html">garchFitControl</a></code></p></div>
+  <code><a href="garchFitControl.html">garchFitControl</a></code>,
+  class <code>"<a href="class-fGARCH.html">fGARCH</a>"</code></p></div>
     </div>
 
     <div class="section level2">
@@ -360,7 +320,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  data ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x56367a7a17b8&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e24225e0&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = x.vec]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -386,7 +346,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:51 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in">   <span class="co"># An univariate timeSeries object with dummy dates:</span></span>
@@ -404,7 +364,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  data ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x56367b706050&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7dbcc8720&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = x.timeSeries]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -430,7 +390,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:51 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
@@ -452,7 +412,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  data ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x56367c2bd8f8&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7d8bc5d28&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = x.ts]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -478,7 +438,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:51 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## MULTIVARIATE TIME SERIES INPUT:</span></span>
@@ -572,13 +532,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1  2.852385e+03 -2.328641e+08 -2.618403e+03 -2.563703e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1  -1.458198e+03 -2.747076e+08 -2.563703e+03 -2.938561e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003974438 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003685713 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02090693 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01859307 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -588,7 +548,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH11 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563679a2d710&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e1ff7868&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = X.mat]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -614,7 +574,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:51 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in">   <span class="co"># A multivariate timeSeries object with dummy dates:</span></span>
@@ -705,13 +665,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1  2.852385e+03 -2.328641e+08 -2.618403e+03 -2.563703e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1  -1.458198e+03 -2.747076e+08 -2.563703e+03 -2.938561e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.00398016 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003836393 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02480173 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01950336 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -721,7 +681,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH11 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563679a2d710&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e1ff7868&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = X.timeSeries]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -747,7 +707,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:52 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
@@ -844,13 +804,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1  2.852385e+03 -2.328641e+08 -2.618403e+03 -2.563703e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1  -1.458198e+03 -2.747076e+08 -2.563703e+03 -2.938561e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003652334 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003680706 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01859212 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01875162 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -860,7 +820,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH11 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563679a2d710&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e1ff7868&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = X.mts]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -886,7 +846,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:52 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## MODELING THE PERCENTUAL SPI/SBI SPREAD FROM LPP BENCHMARK:</span></span>
@@ -981,13 +941,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1   44.87188  -7066.22455 -4084.55042  -4274.92983</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1   -46.12927 -10357.90644 -4274.92983  -5674.92500</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004929304 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004948616 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.0217483 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02316856 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -997,7 +957,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  100 * (SPI - SBI) ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563679a2d710&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e1ff7868&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = X.timeSeries]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -1023,7 +983,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  -420.3749    normalized:  -1.115053 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:52 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in">   <span class="co"># The remaining are not yet supported ...</span></span>
 <span class="r-in">   <span class="co"># garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mat)</span></span>
@@ -1107,13 +1067,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1    -1274.877    -2283989    -1841.165    -2492.527</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1     -2692.172    -3321697    -2492.527    -3686.317</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003872871 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003936529 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01453996 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01457024 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -1123,7 +1083,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Open ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563679a2d710&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e1ff7868&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = returns(X.timeSeries)]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -1149,7 +1109,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  493.1704    normalized:  1.98859 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:52 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="op">(</span><span class="va">High</span><span class="op">-</span><span class="va">Low</span><span class="op">)</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-returns.html" class="external-link">returns</a></span><span class="op">(</span><span class="va">X.timeSeries</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -1248,13 +1208,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1    6.265931 -231.51120 -664.732447  -708.75593</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1   -31.663714 -402.35533 -708.755930 -1073.12969</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004173279 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.00454092 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02254272 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02566123 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -1264,7 +1224,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  100 * (High - Low) ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563679a2d710&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e1ff7868&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = returns(X.timeSeries)]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -1290,7 +1250,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  -476.9354    normalized:  -1.923127 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:49 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:52 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## GO-GARCH Modelling  (not yet!!) % FIXME</span></span>

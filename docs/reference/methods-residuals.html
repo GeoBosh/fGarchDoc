@@ -46,7 +46,7 @@
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S4 method for fGARCH</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/residuals.html" class="external-link">residuals</a></span><span class="op">(</span><span class="va">object</span>, standardize <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<span class="fu">residuals</span><span class="op">(</span><span class="va">object</span>, standardize <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -69,9 +69,12 @@
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     
 
-<p>The function extracts the <code>@residuals</code> slot from an
-    object of class <code>"fGARCH"</code> as returned by the function
-    <code>garchFit</code>.</p>
+<p><code>residuals</code> is a generic function which extracts residual
+  values from objects returned by modeling functions.</p>
+<p>The <code>"fGARCH"</code> method extracts the <code>@residuals</code> slot from an
+  object of class <code>"fGARCH"</code> as returned by the function
+  <code>garchFit</code> and optionally standardizes the residuals, using
+  conditional standard deviations.</p>
 <p>The class of the returned value depends on the input to the
     function <code>garchFit</code> who created the object. The returned
     value is always of the same class as the input object to the
@@ -88,20 +91,26 @@
     </div>
     <div class="section level2">
     <h2 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h2>
-    <p><code><a href="https://rdrr.io/r/stats/residuals.html" class="external-link">residuals</a></code> is a generic function which extracts residual values
-   from objects returned by modeling functions.</p>
+    
+  
+<p>(GNB) Contrary to the description of the returned value of the
+  <code>"fGARCH"</code> method, it is always <code>"numeric"</code>.</p>
+<p>TODO: either implement the documented behaviour or fix the
+  documentation.</p>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
     <p>Diethelm Wuertz for the Rmetrics <span style="R">R</span>-port</p>
     </div>
     <div class="section level2">
-    <h2 id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a></h2>
-    <p>Methods for <code>residuals</code> defined in package <span class="pkg">fGarch</span>:</p><dl><dt>object = "fGARCH"</dt>
-<dd><p>Extractor function for residual from an object of class <code>"fGARCH"</code>.</p></dd>
-
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index">
   
-</dl></div>
+<p><code><a href="methods-fitted.html">fitted</a></code>,
+  <code><a href="methods-predict.html">predict</a></code>,
+  <code><a href="garchFit.html">garchFit</a></code>,
+  class <code><a href="class-fGARCH.html">fGARCH</a></code>,</p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
@@ -121,7 +130,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  LPP40 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x56367404cd88&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e0f9c8d0&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = 100 * x]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -147,11 +156,11 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>  -38.61265    normalized:  -0.1024208 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:56 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:58 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## residuals -</span></span>
-<span class="r-in">   <span class="va">res</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html" class="external-link">residuals</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
+<span class="r-in">   <span class="va">res</span> <span class="op">=</span> <span class="fu">residuals</span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
 <span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.02910647 -0.16114487  0.28265033  0.19302033  0.17555663  0.04716633</span>
 <span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>

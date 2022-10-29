@@ -62,17 +62,17 @@ Extracts formula from a formula GARCH object."><!-- mathjax --><script src="http
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     
 
-<p>The function extracts the <code>@formula</code> expression slot from 
-    an object of class <code>"fGARCH"</code> as returned by the function
-    <code>garchFit</code>.</p>    
-<p>Note, the returned formula has always a left hand 
-    side. If the argument <code>data</code> was an univariate time series
-    and no name was specified to the series, then the left hand side 
-    has assigned the name of the data.set. In the multivariate case
-    the rectangular <code>data</code> object must always have column names,
-    otherwise the fitting will be stopped and you get the error 
-    message</p>    
-    
+<p><code>formula</code> is a generic function which extracts the formula
+  expression from objects returned by modeling functions.</p>  
+<p>The <code>"fGARCH"</code> method extracts the <code>@formula</code> expression
+  slot from an object of class <code>"fGARCH"</code> as returned by the
+  function <code>garchFit</code>.</p>    
+<p>The returned formula has always a left hand side. If the argument
+  <code>data</code> was an univariate time series and no name was specified to
+  the series, then the left hand side is assigned the name of the
+  data.set. In the multivariate case the rectangular <code>data</code> object
+  must always have column names, otherwise the fitting will be stopped
+  with an error message</p>    
 <p>The class of the returned value depends on the input to the
     function <code>garchFit</code> who created the object. The returned
     value is always of the same class as the input object to the
@@ -91,108 +91,32 @@ Extracts formula from a formula GARCH object."><!-- mathjax --><script src="http
     <h2 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h2>
     
 
-<p><code>formula</code> is a generic function which extracts the formula
-    expression from objects returned by modeling functions.</p>
+<p>(GNB) Contrary to the description of the returned value of the
+  <code>"fGARCH"</code> method, it is always <code>"numeric"</code>.</p>
+<p>TODO: either implement the documented behaviour or fix the
+  documentation.</p>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
-    
-
-<p>Diethelm Wuertz for the Rmetrics <span style="R">R</span>-port</p>
+    <p>Diethelm Wuertz for the Rmetrics <span style="R">R</span>-port</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="garchFit.html">garchFit</a></code>,
+  class <code><a href="class-fGARCH.html">fGARCH</a></code></p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co">## garchFit -</span></span>
-<span class="r-in">   <span class="va">fit</span> <span class="op">=</span> <span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span><span class="op">~</span><span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="garchSim.html">garchSim</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Series Initialization:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ARMA Model:                arma</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Formula Mean:              ~ arma(0, 0)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Model:               garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Formula Variance:          ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  ARMA Order:                0 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max ARMA Order:            0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Order:               1 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max GARCH Order:           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Maximum Order:             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Conditional Dist:          norm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  h.start:                   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  llh.start:                 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Length of Series:          100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Recursion Init:            mci</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Series Scale:              0.004019116</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Parameter Initialization:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Initial Parameters:          $params</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Limits of Transformations:   $U, $V</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Which Parameters are Fixed?  $includes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Parameter Matrix:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                      U           V     params includes</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     mu     -0.51941891   0.5194189 0.05194189     TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     omega   0.00000100 100.0000000 0.10000000     TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     alpha1  0.00000001   1.0000000 0.10000000     TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     gamma1 -0.99999999   1.0000000 0.10000000    FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     beta1   0.00000001   1.0000000 0.80000000     TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     delta   0.00000000   2.0000000 2.00000000    FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     skew    0.10000000  10.0000000 1.00000000    FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     shape   1.00000000  10.0000000 4.00000000    FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Index List of Parameters to be Optimized:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     mu  omega alpha1  beta1 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      1      2      3      5 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Persistence:                  0.9 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> --- START OF TRACE ---</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Selected Algorithm: nlminb </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> R coded nlminb Solver: </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0:     142.03620: 0.0519419 0.100000 0.100000 0.800000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1:     141.90342: 0.0519423 0.110223 0.0999189 0.808069</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2:     141.75467: 0.0519434 0.110138 0.0872191 0.805182</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3:     141.64947: 0.0519445 0.119798 0.0821376 0.812288</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4:     141.52622: 0.0519462 0.119936 0.0692646 0.810314</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   5:     141.42448: 0.0519488 0.128775 0.0627261 0.817296</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   6:     141.34973: 0.0519526 0.129785 0.0497539 0.817868</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   7:     141.28167: 0.0519612 0.136931 0.0426251 0.826098</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   8:     141.25319: 0.0519816 0.136779 0.0305898 0.831058</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   9:     141.24246: 0.0520935 0.137930 0.0239640 0.842002</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  10:     141.23887: 0.0523451 0.144754 0.0250274 0.832079</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  11:     141.23807: 0.0529381 0.139711 0.0273473 0.834991</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  12:     141.23790: 0.0534004 0.133373 0.0264942 0.842028</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  13:     141.23765: 0.0540616 0.135474 0.0262755 0.840258</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  14:     141.23747: 0.0554580 0.137565 0.0263346 0.838198</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  15:     141.23746: 0.0558899 0.137883 0.0264450 0.837746</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  16:     141.23746: 0.0559358 0.137780 0.0264705 0.837811</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  17:     141.23746: 0.0559333 0.137744 0.0264726 0.837843</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Final Estimate of the Negative LLH:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  LLH:  -410.4319    norm LLH:  -4.104319 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           mu        omega       alpha1        beta1 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2.248026e-04 2.225011e-06 2.647257e-02 8.378433e-01 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> R-optimhess Difference Approximated Hessian Matrix:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                  mu         omega        alpha1         beta1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mu     -6423837.506  9.272300e+07  3.494482e+03  1.029849e+03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> omega  92722998.166 -6.747940e+12 -1.032148e+08 -1.081282e+08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> alpha1     3494.482 -1.032148e+08 -1.944143e+03 -1.682497e+03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> beta1      1029.849 -1.081282e+08 -1.682497e+03 -1.743082e+03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003176212 secs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01280141 secs</span>
+<span class="r-in">   <span class="va">fit</span> <span class="op">=</span> <span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span><span class="op">~</span><span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="garchSim.html">garchSim</a></span><span class="op">(</span><span class="op">)</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-in">   </span>
 <span class="r-in"><span class="co">## formula - </span></span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/stats/formula.html" class="external-link">formula</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
+<span class="r-in">   <span class="fu">formula</span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data ~ garch(1, 1)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"data")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "data = garchSim()"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563679bb91a0&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7df88e3d8&gt;</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## A Bivariate series and mis-specified formula:</span></span>
 <span class="r-in">   <span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="garchSim.html">garchSim</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></span>
@@ -216,12 +140,12 @@ Extracts formula from a formula GARCH object."><!-- mathjax --><script src="http
 <span class="r-in">   <span class="va">z</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="op">]</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        x             x</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-13 -0.0023426733  0.0026281998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-14  0.0012113489 -0.0004620617</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-15  0.0001135257  0.0043161485</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-16 -0.0042403482 -0.0015096423</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-17 -0.0093567474  0.0013723818</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-18  0.0026138964 -0.0047791439</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-16 -0.0023426733  0.0026281998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-17  0.0012113489 -0.0004620617</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-18  0.0001135257  0.0043161485</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-19 -0.0042403482 -0.0015096423</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-20 -0.0093567474  0.0013723818</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-21  0.0026138964 -0.0047791439</span>
 <span class="r-in">   <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">   <span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span><span class="va">x</span> <span class="op">~</span><span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">z</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-in">   <span class="op">}</span></span>
@@ -234,12 +158,12 @@ Extracts formula from a formula GARCH object."><!-- mathjax --><script src="http
 <span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">z.mat</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
 <span class="r-in">   <span class="va">z.mat</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="op">]</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                     [,1]          [,2]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-13 -0.0023426733  0.0026281998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-14  0.0012113489 -0.0004620617</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-15  0.0001135257  0.0043161485</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-16 -0.0042403482 -0.0015096423</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-17 -0.0093567474  0.0013723818</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-18  0.0026138964 -0.0047791439</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-16 -0.0023426733  0.0026281998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-17  0.0012113489 -0.0004620617</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-18  0.0001135257  0.0043161485</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-19 -0.0042403482 -0.0015096423</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-20 -0.0093567474  0.0013723818</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2021-06-21  0.0026138964 -0.0047791439</span>
 <span class="r-in">   <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in">   <span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span><span class="va">x</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">z.mat</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-in">   <span class="op">}</span></span>

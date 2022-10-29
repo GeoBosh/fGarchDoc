@@ -52,7 +52,7 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S4 method for fGARCH</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">object</span>, n.ahead <span class="op">=</span> <span class="fl">10</span>, trace <span class="op">=</span> <span class="cn">FALSE</span>, mse <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeDateDoc/reference/base-c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cond"</span>,<span class="st">"uncond"</span><span class="op">)</span>,
+<span class="fu">predict</span><span class="op">(</span><span class="va">object</span>, n.ahead <span class="op">=</span> <span class="fl">10</span>, trace <span class="op">=</span> <span class="cn">FALSE</span>, mse <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeDateDoc/reference/base-c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cond"</span>,<span class="st">"uncond"</span><span class="op">)</span>,
         plot<span class="op">=</span><span class="cn">FALSE</span>, nx<span class="op">=</span><span class="cn">NULL</span>, crit_val<span class="op">=</span><span class="cn">NULL</span>, conf<span class="op">=</span><span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
     </div>
 
@@ -121,22 +121,14 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     
 
-<p>The predictions are returned as a data frame with a data frame with
-  columns <code>"meanForecast"</code>, <code>"meanError"</code>, and
+<p>The predictions are returned as a data frame with with columns
+  <code>"meanForecast"</code>, <code>"meanError"</code>, and
   <code>"standardDeviation"</code>. Row <code>h</code> contains the predictions for
   horizon <code>h</code>.</p>    
 <p>The number of records equals the number of forecasting steps <code>n.ahead</code>.</p>        
   
 
     </div>
-    <div class="section level2">
-    <h2 id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a></h2>
-    <p>Methods for <code>predict</code> defined in package <span class="pkg">fGarch</span>:</p><dl><dt>object = "fGARCH"</dt>
-<dd><p>Predict function for objects of class <code>"fGARCH"</code>.</p></dd>
-
-        
-  
-</dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
@@ -150,6 +142,15 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
     <p>Diethelm Wuertz for the Rmetrics <span style="R">R</span>-port</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></code> in base R</p>
+<p><code><a href="methods-fitted.html">fitted</a></code>,
+  <code><a href="methods-residuals.html">residuals</a></code>,</p>
+<p><code><a href="methods-plot.html">plot</a></code>,
+  <code><a href="garchFit.html">garchFit</a></code>,
+  class <code><a href="class-fGARCH.html">fGARCH</a></code>,</p></div>
     </div>
 
     <div class="section level2">
@@ -168,7 +169,7 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  data ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x56367ae2eef8&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7e032fa20&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = garchSim()]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -194,11 +195,11 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
 <span class="r-out co"><span class="r-pr">#&gt;</span>  440.3751    normalized:  4.403751 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:55 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:57 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## predict -</span></span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">fit</span>, n.ahead <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span class="r-in">   <span class="fu">predict</span><span class="op">(</span><span class="va">fit</span>, n.ahead <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     meanForecast   meanError standardDeviation</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  -1.565763e-05 0.004533622       0.004533622</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  -1.565763e-05 0.004175561       0.004175561</span>
@@ -210,7 +211,7 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8  -1.565763e-05 0.003329450       0.003329450</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9  -1.565763e-05 0.003291827       0.003291827</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10 -1.565763e-05 0.003265348       0.003265348</span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">fit</span>, n.ahead <span class="op">=</span> <span class="fl">10</span>, mse<span class="op">=</span><span class="st">"uncond"</span><span class="op">)</span></span>
+<span class="r-in">   <span class="fu">predict</span><span class="op">(</span><span class="va">fit</span>, n.ahead <span class="op">=</span> <span class="fl">10</span>, mse<span class="op">=</span><span class="st">"uncond"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     meanForecast  meanError standardDeviation</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  -1.565763e-05 0.00305647       0.004533622</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  -1.565763e-05 0.00305647       0.004175561</span>
@@ -225,7 +226,7 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## predict with plotting: critical values = +/- 2</span></span>
 <span class="r-in"></span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">fit</span>, n.ahead <span class="op">=</span> <span class="fl">10</span>, plot<span class="op">=</span><span class="cn">TRUE</span>, crit_val <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span class="r-in">   <span class="fu">predict</span><span class="op">(</span><span class="va">fit</span>, n.ahead <span class="op">=</span> <span class="fl">10</span>, plot<span class="op">=</span><span class="cn">TRUE</span>, crit_val <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span class="r-plt img"><img src="methods-predict-1.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     meanForecast   meanError standardDeviation lowerInterval upperInterval</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  -1.565763e-05 0.004533622       0.004533622  -0.009082903   0.009051587</span>
@@ -246,7 +247,7 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
 <span class="r-in">  <span class="va">fit2</span> <span class="op">=</span> <span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="garchSim.html">garchSim</a></span><span class="op">(</span><span class="op">)</span>, trace<span class="op">=</span><span class="cn">FALSE</span>, cond.dist<span class="op">=</span><span class="st">"sged"</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## 95% confidence level</span></span>
-<span class="r-in"> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">fit2</span>, n.ahead<span class="op">=</span><span class="fl">20</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> </span>
+<span class="r-in"> <span class="fu">predict</span><span class="op">(</span><span class="va">fit2</span>, n.ahead<span class="op">=</span><span class="fl">20</span>, plot<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> </span>
 <span class="r-plt img"><img src="methods-predict-2.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     meanForecast   meanError standardDeviation lowerInterval upperInterval</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  -0.0001011749 0.002792102       0.002792102  -0.005672091   0.005183726</span>
@@ -274,7 +275,7 @@ Predicts a time series from a fitted GARCH object."><!-- mathjax --><script src=
 <span class="r-in"> <span class="va">fit3</span> <span class="op">=</span> <span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="garchSim.html">garchSim</a></span><span class="op">(</span><span class="op">)</span>, trace<span class="op">=</span><span class="cn">FALSE</span>, cond.dist<span class="op">=</span><span class="st">"QMLE"</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## 90% confidence level and nx=100 :</span></span>
-<span class="r-in"> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">fit3</span>, n.ahead<span class="op">=</span><span class="fl">20</span>, plot<span class="op">=</span><span class="cn">TRUE</span>, conf<span class="op">=</span><span class="fl">.9</span>, nx<span class="op">=</span><span class="fl">100</span><span class="op">)</span> </span>
+<span class="r-in"> <span class="fu">predict</span><span class="op">(</span><span class="va">fit3</span>, n.ahead<span class="op">=</span><span class="fl">20</span>, plot<span class="op">=</span><span class="cn">TRUE</span>, conf<span class="op">=</span><span class="fl">.9</span>, nx<span class="op">=</span><span class="fl">100</span><span class="op">)</span> </span>
 <span class="r-plt img"><img src="methods-predict-3.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    meanForecast   meanError standardDeviation lowerInterval upperInterval</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.0001058131 0.003189535       0.003189535  -0.005507703   0.005293788</span>

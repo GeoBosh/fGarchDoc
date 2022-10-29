@@ -52,7 +52,7 @@ Plot methods for GARCH Modelling."><!-- mathjax --><script src="https://cdnjs.cl
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S4 method for fGARCH,missing</span>
-<span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/methods-plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, which <span class="op">=</span> <span class="st">"ask"</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+<span class="fu">plot</span><span class="op">(</span><span class="va">x</span>, which <span class="op">=</span> <span class="st">"ask"</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -61,7 +61,8 @@ Plot methods for GARCH Modelling."><!-- mathjax --><script src="https://cdnjs.cl
 <dd><p>an object of class <code>"fGARCH"</code>.</p></dd>
  
   <dt>which</dt>
-<dd><p>a character string denoting which plot should be displayed.</p></dd>
+<dd><p>a character string or a vector of positive denoting which plot
+    should be displayed, see section ‘Details’.</p></dd>
 
   <dt>...</dt>
 <dd><p>optional arguments to be passed.</p></dd>
@@ -72,33 +73,24 @@ Plot methods for GARCH Modelling."><!-- mathjax --><script src="https://cdnjs.cl
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     
 
-<p>The generic function <code>plot</code> allows to display 13 graphs. These
-    are the <br></p>    
-<p>Time SeriesPlot<br>
-            Conditional Standard Deviation Plot<br>
-            Series Plot with 2 Conditional SD Superimposed<br>
-            Autocorrelation function Plot of Observations<br>
-            Autocorrelation function Plot of Squared Observations<br>
-            Cross Correlation Plot<br>
-            Residuals Plot<br>
-            Conditional Standard Deviations Plot<br>
-            Standardized Residuals Plot<br>
-            ACF Plot of Standardized Residuals<br>
-            ACF Plot of Squared Standardized Residuals<br>
-            Cross Correlation Plot between $r^2$ and r<br>
-            Quantile-Quantile Plot of Standardized Residuals<br></p>
-    </div>
-    <div class="section level2">
-    <h2 id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a></h2>
-    <p>Methods for <code>plot</code> defined in package <span class="pkg">fGarch</span>:</p><dl><dt>x = "fGARCH", y = "missing"</dt>
-<dd><p>Plot function for objects of class <code>"fGARCH"</code>.</p></dd>
-
-        
-  
-</dl></div>
+<p>The <code>plot</code> method for <code>"fGARCH"</code> objects offers a selection
+  of diagnostic, exploratory, and presentation plots from a
+  menu. Argument <code>which</code> can be used to request specific plots,
+  which is particularly useful in scripts.</p>
+<p>The generic function <code>plot</code> allows to display 13 graphs:</p>
+<p></p><table class="table table"><tr><td>Time SeriesPlot</td></tr><tr><td>Conditional Standard Deviation Plot</td></tr><tr><td>Series Plot with 2 Conditional SD Superimposed</td></tr><tr><td>Autocorrelation function Plot of Observations</td></tr><tr><td>Autocorrelation function Plot of Squared Observations</td></tr><tr><td>Cross Correlation Plot</td></tr><tr><td>Residuals Plot</td></tr><tr><td>Conditional Standard Deviations Plot</td></tr><tr><td>Standardized Residuals Plot</td></tr><tr><td>ACF Plot of Standardized Residuals</td></tr><tr><td>ACF Plot of Squared Standardized Residuals</td></tr><tr><td>Cross Correlation Plot between $r^2$ and r</td></tr><tr><td>Quantile-Quantile Plot of Standardized Residuals</td></tr></table></div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
     <p>Diethelm Wuertz for the Rmetrics <span style="R">R</span>-port</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="garchFit.html">garchFit</a></code>,
+  class <code><a href="class-fGARCH.html">fGARCH</a></code>,</p>
+<p><code><a href="methods-predict.html">predict</a></code>,
+  <code><a href="methods-fitted.html">fitted</a></code>,
+  <code><a href="methods-residuals.html">residuals</a></code></p>
+<p><code>plot</code></p></div>
     </div>
 
     <div class="section level2">
@@ -109,24 +101,24 @@ Plot methods for GARCH Modelling."><!-- mathjax --><script src="https://cdnjs.cl
 <span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                   garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-09  0.007522375</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-10 -0.001628817</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-11  0.003737262</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-12  0.004705047</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-13  0.001966999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-14 -0.005850769</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-12  0.007522375</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-13 -0.001628817</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-14  0.003737262</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-15  0.004705047</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-16  0.001966999</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2022-04-17 -0.005850769</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## garchFit - </span></span>
 <span class="r-in">   <span class="va">fit</span> <span class="op">=</span> <span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span class="r-in">   </span>
 <span class="r-in"><span class="co">## Batch Plot:</span></span>
-<span class="r-in">   <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/methods-plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit</span>, which <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+<span class="r-in">   <span class="fu">plot</span><span class="op">(</span><span class="va">fit</span>, which <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span class="r-plt img"><img src="methods-plot-1.png" alt="" width="700" height="433"></span>
 <span class="r-in">   </span>
 <span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
 <span class="r-in"><span class="co">## Plot:</span></span>
 <span class="r-in">   <span class="co"># Interactive Plot:</span></span>
-<span class="r-in">   <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/methods-plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span> </span>
+<span class="r-in">   <span class="fu">plot</span><span class="op">(</span><span class="va">fit</span><span class="op">)</span> </span>
 <span class="r-in"><span class="op">}</span></span>
 </code></pre></div>
     </div>

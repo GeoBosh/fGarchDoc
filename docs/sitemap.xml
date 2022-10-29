@@ -73,6 +73,9 @@
     <loc>https://geobosh.github.io/fGarchDoc/reference/dist-stdSlider.html</loc>
   </url>
   <url>
+    <loc>https://geobosh.github.io/fGarchDoc/reference/fUGARCHSPEC-class.html</loc>
+  </url>
+  <url>
     <loc>https://geobosh.github.io/fGarchDoc/reference/garchFit.html</loc>
   </url>
   <url>
@@ -106,15 +109,9 @@
     <loc>https://geobosh.github.io/fGarchDoc/reference/methods-residuals.html</loc>
   </url>
   <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-show.html</loc>
-  </url>
-  <url>
     <loc>https://geobosh.github.io/fGarchDoc/reference/methods-summary.html</loc>
   </url>
   <url>
     <loc>https://geobosh.github.io/fGarchDoc/reference/methods-volatility.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/test.html</loc>
   </url>
 </urlset>

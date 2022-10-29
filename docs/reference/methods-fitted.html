@@ -62,9 +62,12 @@ Extracts fitted values from a fitted GARCH object."><!-- mathjax --><script src=
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     
 
-<p>The function extracts the <code>@fitted</code> value slot from an
-    object of class <code>"fGARCH"</code> as returned by the function
-    <code>garchFit</code>.</p>
+<p><code>fitted()</code> is a generic function which extracts fitted values
+    from objects returned by modeling functions.  <code>methods(fitted)</code>
+    will show the methods available in the current <span style="R">R</span> session.</p>
+<p>The method for <code>"fGARCH"</code> objects extracts the <code>@fitted</code>
+    value slot from an object of class <code>"fGARCH"</code> as returned by
+    the function <code>garchFit</code>.</p>
 <p>The class of the returned value depends on the input to the
     function <code>garchFit</code> who created the object. The returned
     value is always of the same class as the input object to the
@@ -81,13 +84,24 @@ Extracts fitted values from a fitted GARCH object."><!-- mathjax --><script src=
     </div>
     <div class="section level2">
     <h2 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h2>
-    <p><code><a href="https://rdrr.io/r/stats/fitted.values.html" class="external-link">fitted()</a></code> is a generic function which extracts fitted values
-    from objects returned by modeling functions.  <code>methods(fitted)</code>
-    will show the methods available in the current <span style="R">R</span> session.</p>
+    
+  
+<p>(GNB) Contrary to the description of the returned value of the
+  <code>"fGARCH"</code> method, it is always <code>"numeric"</code>.</p>
+<p>TODO: either implement the documented behaviour or fix the
+  documentation.</p>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
     <p>Diethelm Wuertz for the Rmetrics <span style="R">R</span>-port</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="methods-predict.html">predict</a></code>,
+  <code><a href="methods-residuals.html">residuals</a></code>,
+  <code><a href="garchFit.html">garchFit</a></code>,
+  class <code><a href="class-fGARCH.html">fGARCH</a></code>,</p>
+<p><code><a href="methods-plot.html">plot</a></code></p></div>
     </div>
 
     <div class="section level2">
@@ -109,7 +123,7 @@ Extracts fitted values from a fitted GARCH object."><!-- mathjax --><script src=
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  LPP40 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x563679269940&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55a7d7e9c500&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = 100 * x]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -135,12 +149,12 @@ Extracts fitted values from a fitted GARCH object."><!-- mathjax --><script src=
 <span class="r-out co"><span class="r-pr">#&gt;</span>  -38.61265    normalized:  -0.1024208 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Wed Oct 26 21:00:54 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Oct 29 15:04:56 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co">## fitted -</span></span>
 <span class="r-in">   <span class="co"># Fitted values are now a "timeSeries" oject:</span></span>
-<span class="r-in">   <span class="va">fitted</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/fitted.values.html" class="external-link">fitted</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
+<span class="r-in">   <span class="va">fitted</span> <span class="op">=</span> <span class="fu">fitted</span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
 <span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">fitted</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2005-11-01 2005-11-02 2005-11-03 2005-11-04 2005-11-07 2005-11-08 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  0.0199980 -0.1120404  0.3317548  0.2421248  0.2246611  0.0962708 </span>
