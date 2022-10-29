@@ -46,6 +46,6 @@ A comprehensive overview of the models and conditional distributions employed in
 `fGarch`, along with worked examples, is available in the following paper by the original
 authors of the package:
 [WurtzEtAlGarch.pdf](https://github.com/GeoBosh/fGarchDoc/blob/master/WurtzEtAlGarch.pdf).
-(* This is an unpublished manuscript. Some online sources, confusingly, attribute it to JSS,
+(*This is an unpublished manuscript. Some online sources, confusingly, attribute it to JSS,
 vol 55, issue 2, but this seems to have taken the place holders `VV` and `II` in the heading
 on the first page as being Roman for the numbers 55 and 2.*)
