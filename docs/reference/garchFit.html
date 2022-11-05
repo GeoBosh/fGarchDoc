@@ -4,7 +4,7 @@
 Estimates the parameters of a univariate ARMA-GARCH/APARCH process, or
   --- experimentally --- of a multivariate GO-GARCH process model.  The
   latter uses an algorithm based on fastICA(), inspired from
-  Bernhard Pfaff's package gogarch."><title>Univariate or multivariate GARCH time series fitting — garchFit • fGarch</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Univariate or multivariate GARCH time series fitting — garchFit"><meta property="og:description" content="
+  Bernhard Pfaff's package gogarch."><title>Univariate or multivariate GARCH time series fitting — garchFit • fGarch</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Univariate or multivariate GARCH time series fitting — garchFit"><meta property="og:description" content="
   
 Estimates the parameters of a univariate ARMA-GARCH/APARCH process, or
   --- experimentally --- of a multivariate GO-GARCH process model.  The
@@ -304,13 +304,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co">## UNIVARIATE TIME SERIES INPUT:</span></span>
-<span class="r-in">   <span class="co"># In the univariate case the lhs formula has not to be specified ...</span></span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="co"># A numeric Vector from default GARCH(1,1) - fix the seed:</span></span>
-<span class="r-in">   <span class="va">N</span> <span class="op">=</span> <span class="fl">200</span></span>
-<span class="r-in">   <span class="va">x.vec</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="fu"><a href="garchSim.html">garchSim</a></span><span class="op">(</span><span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>rseed <span class="op">=</span> <span class="fl">1985</span><span class="op">)</span>, n <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x.vec</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## UNIVARIATE TIME SERIES INPUT:</span></span></span>
+<span class="r-in"><span>   <span class="co"># In the univariate case the lhs formula has not to be specified ...</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="co"># A numeric Vector from default GARCH(1,1) - fix the seed:</span></span></span>
+<span class="r-in"><span>   <span class="va">N</span> <span class="op">=</span> <span class="fl">200</span></span></span>
+<span class="r-in"><span>   <span class="va">x.vec</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="fu"><a href="garchSim.html">garchSim</a></span><span class="op">(</span><span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>rseed <span class="op">=</span> <span class="fl">1985</span><span class="op">)</span>, n <span class="op">=</span> <span class="va">N</span><span class="op">)</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x.vec</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -320,7 +320,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  data ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e84b2ad9e0&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d33899a90&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = x.vec]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -346,15 +346,15 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:57 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:01 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="co"># An univariate timeSeries object with dummy dates:</span></span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics" class="external-link">"timeSeries"</a></span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="co"># An univariate timeSeries object with dummy dates:</span></span></span>
+<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics" class="external-link">"timeSeries"</a></span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: timeSeries</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: timeDate</span>
-<span class="r-in">   <span class="va">x.timeSeries</span> <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-dummy.html" class="external-link">dummyDailySeries</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="va">x.vec</span><span class="op">)</span>, units <span class="op">=</span> <span class="st">"GARCH11"</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x.timeSeries</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="va">x.timeSeries</span> <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-dummy.html" class="external-link">dummyDailySeries</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="va">x.vec</span><span class="op">)</span>, units <span class="op">=</span> <span class="st">"GARCH11"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x.timeSeries</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -364,7 +364,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  data ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e85947b3b0&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d347f2688&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = x.timeSeries]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -390,19 +390,19 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:58 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:01 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">   <span class="co"># An univariate zoo object:</span></span>
-<span class="r-in">   <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://zoo.R-Forge.R-project.org/" class="external-link">"zoo"</a></span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">x.zoo</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/zoo.html" class="external-link">zoo</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">x.vec</span><span class="op">)</span>, order.by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">x.timeSeries</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x.zoo</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="co"># An univariate "ts" object:</span></span>
-<span class="r-in">   <span class="va">x.ts</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/ts.html" class="external-link">as.ts</a></span><span class="op">(</span><span class="va">x.vec</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x.ts</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>   <span class="co"># An univariate zoo object:</span></span></span>
+<span class="r-in"><span>   <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://zoo.R-Forge.R-project.org/" class="external-link">"zoo"</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">x.zoo</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/zoo.html" class="external-link">zoo</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">x.vec</span><span class="op">)</span>, order.by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">x.timeSeries</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x.zoo</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="co"># An univariate "ts" object:</span></span></span>
+<span class="r-in"><span>   <span class="va">x.ts</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/ts.html" class="external-link">as.ts</a></span><span class="op">(</span><span class="va">x.vec</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">x.ts</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -412,7 +412,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  data ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e859eafb18&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d358718e8&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = x.ts]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -438,15 +438,15 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:58 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:01 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## MULTIVARIATE TIME SERIES INPUT:</span></span>
-<span class="r-in">   <span class="co"># For multivariate data inputs the lhs formula must be specified ...</span></span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="co"># A numeric matrix binded with dummy random normal variates:</span></span>
-<span class="r-in">   <span class="va">X.mat</span> <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/base-cbind.html" class="external-link">cbind</a></span><span class="op">(</span>GARCH11 <span class="op">=</span> <span class="va">x.vec</span>, R <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="va">GARCH11</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.mat</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## MULTIVARIATE TIME SERIES INPUT:</span></span></span>
+<span class="r-in"><span>   <span class="co"># For multivariate data inputs the lhs formula must be specified ...</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="co"># A numeric matrix binded with dummy random normal variates:</span></span></span>
+<span class="r-in"><span>   <span class="va">X.mat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>GARCH11 <span class="op">=</span> <span class="va">x.vec</span>, R <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="va">GARCH11</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.mat</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Series Initialization:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ARMA Model:                arma</span>
@@ -532,13 +532,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1  2.852385e+03 -2.328641e+08 -2.618403e+03 -2.563703e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1  -1.458198e+03 -2.747076e+08 -2.563703e+03 -2.938561e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003756523 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004038095 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01967192 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02060437 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -548,7 +548,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH11 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e850008530&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d33418000&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = X.mat]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -574,12 +574,12 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:58 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:01 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="co"># A multivariate timeSeries object with dummy dates:</span></span>
-<span class="r-in">   <span class="va">X.timeSeries</span> <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-dummy.html" class="external-link">dummyDailySeries</a></span><span class="op">(</span><span class="va">X.mat</span>, units <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"GARCH11"</span>, <span class="st">"R"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="va">GARCH11</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.timeSeries</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="co"># A multivariate timeSeries object with dummy dates:</span></span></span>
+<span class="r-in"><span>   <span class="va">X.timeSeries</span> <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-dummy.html" class="external-link">dummyDailySeries</a></span><span class="op">(</span><span class="va">X.mat</span>, units <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"GARCH11"</span>, <span class="st">"R"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="va">GARCH11</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.timeSeries</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Series Initialization:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ARMA Model:                arma</span>
@@ -665,13 +665,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1  2.852385e+03 -2.328641e+08 -2.618403e+03 -2.563703e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1  -1.458198e+03 -2.747076e+08 -2.563703e+03 -2.938561e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003737926 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004082203 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01872706 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02094173 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -681,7 +681,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH11 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e850008530&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d33418000&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = X.timeSeries]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -707,18 +707,18 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:58 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:01 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">   <span class="co"># A multivariate zoo object:</span></span>
-<span class="r-in">   <span class="va">X.zoo</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/zoo.html" class="external-link">zoo</a></span><span class="op">(</span><span class="va">X.mat</span>, order.by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">x.timeSeries</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="va">GARCH11</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.zoo</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="co"># A multivariate "mts" object:</span></span>
-<span class="r-in">   <span class="va">X.mts</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/ts.html" class="external-link">as.ts</a></span><span class="op">(</span><span class="va">X.mat</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="va">GARCH11</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.mts</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>   <span class="co"># A multivariate zoo object:</span></span></span>
+<span class="r-in"><span>   <span class="va">X.zoo</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/zoo.html" class="external-link">zoo</a></span><span class="op">(</span><span class="va">X.mat</span>, order.by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">x.timeSeries</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="va">GARCH11</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.zoo</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="co"># A multivariate "mts" object:</span></span></span>
+<span class="r-in"><span>   <span class="va">X.mts</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/ts.html" class="external-link">as.ts</a></span><span class="op">(</span><span class="va">X.mat</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="va">GARCH11</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.mts</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Series Initialization:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ARMA Model:                arma</span>
@@ -804,13 +804,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1  2.852385e+03 -2.328641e+08 -2.618403e+03 -2.563703e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1  -1.458198e+03 -2.747076e+08 -2.563703e+03 -2.938561e+03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004043341 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003790855 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02073932 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01935315 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -820,7 +820,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH11 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e850008530&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d33418000&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = X.mts]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -846,17 +846,17 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  861.9494    normalized:  4.309747 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:58 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:01 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## MODELING THE PERCENTUAL SPI/SBI SPREAD FROM LPP BENCHMARK:</span></span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics" class="external-link">"timeSeries"</a></span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">X.timeSeries</span> <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/methods-as.html" class="external-link">as.timeSeries</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">LPP2005REC</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">X.mat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">X.timeSeries</span><span class="op">)</span></span>
-<span class="r-in">   <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="va">X.zoo</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/zoo.html" class="external-link">zoo</a></span><span class="op">(</span><span class="va">X.mat</span>, order.by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">X.mat</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">   <span class="va">X.mts</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/ts.html" class="external-link">ts</a></span><span class="op">(</span><span class="va">X.mat</span><span class="op">)</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="op">(</span><span class="va">SPI</span> <span class="op">-</span> <span class="va">SBI</span><span class="op">)</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.timeSeries</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## MODELING THE PERCENTUAL SPI/SBI SPREAD FROM LPP BENCHMARK:</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics" class="external-link">"timeSeries"</a></span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">X.timeSeries</span> <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/methods-as.html" class="external-link">as.timeSeries</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">LPP2005REC</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">X.mat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">X.timeSeries</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="va">X.zoo</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/zoo.html" class="external-link">zoo</a></span><span class="op">(</span><span class="va">X.mat</span>, order.by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/zoo/man/yearmon.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">X.mat</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">X.mts</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/ts.html" class="external-link">ts</a></span><span class="op">(</span><span class="va">X.mat</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="op">(</span><span class="va">SPI</span> <span class="op">-</span> <span class="va">SBI</span><span class="op">)</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">X.timeSeries</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Series Initialization:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ARMA Model:                arma</span>
@@ -941,13 +941,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1   44.87188  -7066.22455 -4084.55042  -4274.92983</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1   -46.12927 -10357.90644 -4274.92983  -5674.92500</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004927397 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.005179405 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02335787 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02402258 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -957,7 +957,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  100 * (SPI - SBI) ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e850008530&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d33418000&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = X.timeSeries]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -983,17 +983,17 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  -420.3749    normalized:  -1.115053 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:58 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:01 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in">   <span class="co"># The remaining are not yet supported ...</span></span>
-<span class="r-in">   <span class="co"># garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mat)</span></span>
-<span class="r-in">   <span class="co"># garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.zoo)</span></span>
-<span class="r-in">   <span class="co"># garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mts)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## MODELING HIGH/LOW RETURN SPREADS FROM MSFT PRICE SERIES:</span></span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="va">X.timeSeries</span> <span class="op">=</span> <span class="va">MSFT</span></span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="va">Open</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-returns.html" class="external-link">returns</a></span><span class="op">(</span><span class="va">X.timeSeries</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="co"># The remaining are not yet supported ...</span></span></span>
+<span class="r-in"><span>   <span class="co"># garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mat)</span></span></span>
+<span class="r-in"><span>   <span class="co"># garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.zoo)</span></span></span>
+<span class="r-in"><span>   <span class="co"># garchFit(100*(SPI - SBI) ~ garch(1,1), data = X.mts)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## MODELING HIGH/LOW RETURN SPREADS FROM MSFT PRICE SERIES:</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="va">X.timeSeries</span> <span class="op">=</span> <span class="va">MSFT</span></span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="va">Open</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-returns.html" class="external-link">returns</a></span><span class="op">(</span><span class="va">X.timeSeries</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Series Initialization:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ARMA Model:                arma</span>
@@ -1067,13 +1067,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1    -1274.877    -2283989    -1841.165    -2492.527</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1     -2692.172    -3321697    -2492.527    -3686.317</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.003962517 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004357576 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01481938 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.01613188 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -1083,7 +1083,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Open ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e850008530&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d33418000&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = returns(X.timeSeries)]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -1109,9 +1109,9 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  493.1704    normalized:  1.98859 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:58 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:01 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in">   <span class="fu">garchFit</span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="op">(</span><span class="va">High</span><span class="op">-</span><span class="va">Low</span><span class="op">)</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-returns.html" class="external-link">returns</a></span><span class="op">(</span><span class="va">X.timeSeries</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span>   <span class="fu">garchFit</span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="op">(</span><span class="va">High</span><span class="op">-</span><span class="va">Low</span><span class="op">)</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/fin-returns.html" class="external-link">returns</a></span><span class="op">(</span><span class="va">X.timeSeries</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Series Initialization:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ARMA Model:                arma</span>
@@ -1208,13 +1208,13 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> alpha1    6.265931 -231.51120 -664.732447  -708.75593</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> beta1   -31.663714 -402.35533 -708.755930 -1073.12969</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"time")</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004359007 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Time difference of 0.004378557 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> --- END OF TRACE ---</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Time to Estimate Parameters:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02333641 secs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Time difference of 0.02437019 secs</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Title:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  GARCH Modelling </span>
@@ -1224,7 +1224,7 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  100 * (High - Low) ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x55e850008530&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x560d33418000&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = returns(X.timeSeries)]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -1250,16 +1250,16 @@ garchKappa(cond.dist = c("norm", "ged", "std", "snorm", "sged", "sstd", "snig"),
 <span class="r-out co"><span class="r-pr">#&gt;</span>  -476.9354    normalized:  -1.923127 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Fri Nov  4 08:39:58 2022 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Sat Nov  5 18:56:02 2022 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## GO-GARCH Modelling  (not yet!!) % FIXME</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="co">## data(DowJones30, package="fEcofin") # no longer exists</span></span>
-<span class="r-in">  <span class="co">## X = returns(as.timeSeries(DowJones30)); head(X)</span></span>
-<span class="r-in">  <span class="co">## N = 5; ans = .gogarchFit(data = X[, 1:N], trace = FALSE); ans</span></span>
-<span class="r-in">  <span class="co">## ans@h.t</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## GO-GARCH Modelling  (not yet!!) % FIXME</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="co">## data(DowJones30, package="fEcofin") # no longer exists</span></span></span>
+<span class="r-in"><span>  <span class="co">## X = returns(as.timeSeries(DowJones30)); head(X)</span></span></span>
+<span class="r-in"><span>  <span class="co">## N = 5; ans = .gogarchFit(data = X[, 1:N], trace = FALSE); ans</span></span></span>
+<span class="r-in"><span>  <span class="co">## ans@h.t</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
