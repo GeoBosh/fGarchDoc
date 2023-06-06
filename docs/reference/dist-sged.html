@@ -67,24 +67,31 @@ Functions to compute density, distribution function, quantile function
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>mean, sd, nu, xi</dt>
 <dd><p>location parameter <code>mean</code>,
-        scale parameter <code>sd</code>,
-        shape parameter <code>nu</code>, 
-        skewness parameter <code>xi</code>.</p></dd>
+    scale parameter <code>sd</code>,
+    shape parameter <code>nu</code>, 
+    skewness parameter <code>xi</code>.</p></dd>
 
-    <dt>n</dt>
+  <dt>n</dt>
 <dd><p>the number of observations.</p></dd>
  
-    <dt>p</dt>
+  <dt>p</dt>
 <dd><p>a numeric vector of probabilities.</p></dd>
 
-    <dt>x, q</dt>
+  <dt>x, q</dt>
 <dd><p>a numeric vector of quantiles.</p></dd>
 
-    <dt>log</dt>
+  <dt>log</dt>
 <dd><p>a logical; if TRUE, densities are given as log densities.</p></dd>
 
     
 </dl></div>
+    <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    
+
+<p>The distribution is standardized as discussed in the reference by
+  Wuertz et al below.</p>
+    </div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
@@ -112,7 +119,12 @@ Functions to compute density, distribution function, quantile function
     Econometrica, 59, 347--370.</p>    
 <p>Fernandez C., Steel M.F.J. (2000); 
     <em>On Bayesian Modelling of Fat Tails and Skewness</em>,
-    Preprint, 31 pages.</p>
+    Preprint, 31 pages.</p>    
+<p>Wuertz D., Chalabi Y. and Luksan L. (????);
+    <em>Parameter estimation of ARMA  models with GARCH/APARCH errors: An R
+      and SPlus software implementation</em>,
+    Preprint, 41 pages,
+    <a href="https://github.com/GeoBosh/fGarchDoc/blob/master/WurtzEtAlGarch.pdf" class="external-link">https://github.com/GeoBosh/fGarchDoc/blob/master/WurtzEtAlGarch.pdf</a></p>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
