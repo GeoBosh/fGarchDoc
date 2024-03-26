@@ -14,7 +14,7 @@ Extracts volatility from a fitted GARCH object."><!-- mathjax --><script src="ht
     
     <a class="navbar-brand me-2" href="../index.html">fGarch</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4022.90</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4033.92</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,8 +51,7 @@ Extracts volatility from a fitted GARCH object."><!-- mathjax --><script src="ht
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">volatility</span><span class="op">(</span><span class="va">object</span>, <span class="va">...</span><span class="op">)</span></span>
-<span><span class="co"># S3 method for fGARCH</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S3 method for fGARCH</span></span>
 <span><span class="fu">volatility</span><span class="op">(</span><span class="va">object</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"sigma"</span>, <span class="st">"h"</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -73,7 +72,7 @@ Extracts volatility from a fitted GARCH object."><!-- mathjax --><script src="ht
 <p></p></dd>
 
   <dt>...</dt>
-<dd><p>additional arguments to be passed.</p></dd>
+<dd><p>currently not used.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -81,7 +80,7 @@ Extracts volatility from a fitted GARCH object."><!-- mathjax --><script src="ht
     
 
 <p><code>volatility</code> is an S3 generic function for computation of
-  volatility, see <code>link[fBasics]{volatility}</code> for the default
+  volatility, see <code><a href="https://geobosh.github.io/fBasicsDoc/reference/volatility.html" class="external-link">volatility</a></code> for the default
   method.</p>
 <p>The method for <code>"fGARCH"</code> objects, described here, extracts the
   volatility from slot <code>@sigma.t</code> or <code>@h.t</code> of an
@@ -131,7 +130,7 @@ Extracts volatility from a fitted GARCH object."><!-- mathjax --><script src="ht
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Swiss Pension fund Index -</span></span></span>
-<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics" class="external-link">"timeSeries"</a></span><span class="op">)</span><span class="op">)</span> <span class="co"># need package 'timeSeries'</span></span></span>
+<span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://geobosh.github.io/timeSeriesDoc/" class="external-link">"timeSeries"</a></span><span class="op">)</span><span class="op">)</span> <span class="co"># need package 'timeSeries'</span></span></span>
 <span class="r-in"><span>   <span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://geobosh.github.io/timeSeriesDoc/reference/methods-as.html" class="external-link">as.timeSeries</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">LPP2005REC</span>, package <span class="op">=</span> <span class="st">"timeSeries"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## garchFit</span></span></span>
@@ -146,7 +145,7 @@ Extracts volatility from a fitted GARCH object."><!-- mathjax --><script src="ht
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Mean and Variance Equation:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  LPP40 ~ garch(1, 1)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x559fb47ba0a0&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x579d349d0e88&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [data = 100 * x]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Conditional Distribution:</span>
@@ -172,7 +171,7 @@ Extracts volatility from a fitted GARCH object."><!-- mathjax --><script src="ht
 <span class="r-out co"><span class="r-pr">#&gt;</span>  -38.61265    normalized:  -0.1024208 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Description:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Tue Jun  6 21:51:52 2023 by user: georgi </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Tue Mar 26 17:45:28 2024 by user: georgi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## volatility -</span></span></span>

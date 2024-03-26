@@ -14,7 +14,7 @@ Simulates univariate GARCH/APARCH time series."><!-- mathjax --><script src="htt
     
     <a class="navbar-brand me-2" href="../index.html">fGarch</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4022.90</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4033.92</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,10 +91,10 @@ Simulates univariate GARCH/APARCH time series."><!-- mathjax --><script src="htt
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     
 
-<p>The function <code>garchSim</code> simulates an univariate GARCH or APARCH
-  time series process as specified by argument <code>spec</code>.  The default
-  model specifies Bollerslev's GARCH(1,1) model with normally
-  distributed innovations.</p>  
+<p><code>garchSim</code> simulates an univariate GARCH or APARCH time series
+  process as specified by argument <code>spec</code>.  The default model
+  specifies Bollerslev's GARCH(1,1) model with normally distributed
+  innovations.</p>  
 <p><code>spec</code> is an object of class <code>"fGARCHSPEC"</code> as returned by
   the function <code><a href="garchSpec.html">garchSpec</a></code>. It comes with a slot
   <code>@model</code> which is a list of just the numeric parameter
@@ -125,11 +125,9 @@ Simulates univariate GARCH/APARCH time series."><!-- mathjax --><script src="htt
     
 
 
-<p>the simulated time series as an objects of class <code>"timeSeries"</code></p>
-
-
-<p>with attribute <code>"spec"</code> containing the specification of the
-  model.</p>
+<p>the simulated time series as an objects of
+  class <code>"timeSeries"</code> with attribute <code>"spec"</code> containing the
+  specification of the model.</p>
 
 
 <p>If <code>extended</code> is <code>TRUE</code>, then the time series is
@@ -185,282 +183,282 @@ Simulates univariate GARCH/APARCH time series."><!-- mathjax --><script src="htt
 <span class="r-in"><span>   <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> </span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-17 -2.911226e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-18  2.777206e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-19  2.293454e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-20 -5.724560e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-21 -5.579287e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-22 -3.053223e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-23 -5.901101e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-24  1.982989e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-25  2.311324e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-26  1.591033e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-27 -1.844240e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-28  2.327273e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-29 -2.810579e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-04-30  4.083679e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-01 -1.981109e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-02 -2.736583e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-03 -3.197631e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-04 -2.687408e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-05 -4.503115e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-06 -9.716603e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-07  1.665776e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-08 -2.800591e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-09  1.205845e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-10  8.911127e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-11 -3.355605e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-12  6.375044e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-13  6.992214e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-14  2.302707e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-15 -2.773734e-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-16 -6.103604e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-17 -2.646679e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-18  9.828453e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-19  2.199372e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-20 -1.669151e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-21  4.976765e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-22  1.773448e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-23  4.240135e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-24  2.872468e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-25 -4.483632e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-26  4.522951e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27 -5.253080e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  1.227027e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29  5.491888e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30 -2.600418e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  2.780861e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01  3.701203e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02  6.088748e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03 -1.635551e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  1.800426e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  5.328106e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-05 -2.911226e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-06  2.777206e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-07  2.293454e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-08 -5.724560e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-09 -5.579287e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-10 -3.053223e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-11 -5.901101e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-12  1.982989e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-13  2.311324e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-14  1.591033e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-15 -1.844240e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-16  2.327273e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-17 -2.810579e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-18  4.083679e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-19 -1.981109e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-20 -2.736583e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-21 -3.197631e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-22 -2.687408e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-23 -4.503115e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-24 -9.716603e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-25  1.665776e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-26 -2.800591e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-27  1.205845e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-28  8.911127e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-02-29 -3.355605e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-01  6.375044e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-02  6.992214e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-03  2.302707e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-04 -2.773734e-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-05 -6.103604e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-06 -2.646679e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-07  9.828453e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-08  2.199372e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-09 -1.669151e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-10  4.976765e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-11  1.773448e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-12  4.240135e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-13  2.872468e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-14 -4.483632e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-15  4.522951e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16 -5.253080e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  1.227027e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18  5.491888e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19 -2.600418e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  2.780861e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21  3.701203e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22  6.088748e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23 -1.635551e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  1.800426e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  5.328106e-03</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span><span class="co">## More simulations ...</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>   <span class="co"># Default GARCH(1,1) - uses default parameter settings</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27  1.106146e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  4.758933e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29 -4.830058e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30 -1.673998e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  4.252527e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01  1.028559e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02 -1.439446e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03  6.829775e-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  5.870645e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  3.393152e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16  1.106146e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  4.758933e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18 -4.830058e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19 -1.673998e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  4.252527e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21  1.028559e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22 -1.439446e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23  6.829775e-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  5.870645e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  3.393152e-03</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># ARCH(2) - use default omega and specify alpha, set beta=0!</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.4</span><span class="op">)</span>, beta <span class="op">=</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27  0.0057975767</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28 -0.0011834665</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29  0.0017927422</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30 -0.0008625608</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  0.0010001187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01  0.0030832726</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02 -0.0018462440</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03 -0.0023798962</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  0.0008704696</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  0.0007833472</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16  0.0057975767</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17 -0.0011834665</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18  0.0017927422</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19 -0.0008625608</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  0.0010001187</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21  0.0030832726</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22 -0.0018462440</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23 -0.0023798962</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  0.0008704696</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  0.0007833472</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># AR(1)-ARCH(2) - use default mu, omega</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>ar <span class="op">=</span> <span class="fl">0.5</span>, alpha <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.3</span>, <span class="fl">0.4</span><span class="op">)</span>, beta <span class="op">=</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27 -0.0064929453</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28 -0.0034116707</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29 -0.0007531555</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30 -0.0022603821</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31 -0.0018410996</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01 -0.0006229702</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02 -0.0003279921</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03  0.0012915726</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  0.0019140520</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  0.0005515873</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16 -0.0064929453</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17 -0.0034116707</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18 -0.0007531555</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19 -0.0022603821</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20 -0.0018410996</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21 -0.0006229702</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22 -0.0003279921</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23  0.0012915726</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  0.0019140520</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  0.0005515873</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># AR([1,5])-GARCH(1,1) - use default garch values and subset ar[.]</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>mu <span class="op">=</span> <span class="fl">0.001</span>, ar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0.1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27  0.0032399130</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  0.0022705751</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29 -0.0002870203</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30 -0.0011077627</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31 -0.0031293745</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01 -0.0017970990</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02  0.0037490018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03  0.0057034846</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  0.0036035562</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  0.0039249405</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16  0.0032399130</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  0.0022705751</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18 -0.0002870203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19 -0.0011077627</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20 -0.0031293745</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21 -0.0017970990</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22  0.0037490018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23  0.0057034846</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  0.0036035562</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  0.0039249405</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># ARMA(1,2)-GARCH(1,1) - use default garch values</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>ar <span class="op">=</span> <span class="fl">0.5</span>, ma <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.3</span>, <span class="op">-</span><span class="fl">0.3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>  </span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27  0.0043355134</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  0.0017659100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29 -0.0001591027</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30  0.0019475098</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31 -0.0010304484</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01 -0.0030496409</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02  0.0052197228</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03  0.0022934947</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  0.0044816948</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  0.0024859766</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16  0.0043355134</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  0.0017659100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18 -0.0001591027</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19  0.0019475098</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20 -0.0010304484</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21 -0.0030496409</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22  0.0052197228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23  0.0022934947</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  0.0044816948</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  0.0024859766</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># GARCH(1,1) - use default omega and specify alpha/beta</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.2</span>, beta <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27 -0.0021716014</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28 -0.0010676195</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29 -0.0030764296</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30 -0.0037004641</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  0.0004573765</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01  0.0018448483</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02 -0.0021326537</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03  0.0010830056</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04 -0.0026793967</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  0.0014976260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16 -0.0021716014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17 -0.0010676195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18 -0.0030764296</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19 -0.0037004641</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  0.0004573765</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21  0.0018448483</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22 -0.0021326537</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23  0.0010830056</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24 -0.0026793967</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  0.0014976260</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># GARCH(1,1) - specify omega/alpha/beta</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>omega <span class="op">=</span> <span class="fl">1e-6</span>, alpha <span class="op">=</span> <span class="fl">0.1</span>, beta <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27  0.0017863687</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  0.0008059858</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29  0.0032089856</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30  0.0038018231</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  0.0022089156</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01 -0.0007191500</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02 -0.0004469074</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03  0.0006013883</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04 -0.0019554465</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05 -0.0010905864</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16  0.0017863687</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  0.0008059858</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18  0.0032089856</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19  0.0038018231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  0.0022089156</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21 -0.0007191500</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22 -0.0004469074</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23  0.0006013883</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24 -0.0019554465</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25 -0.0010905864</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># GARCH(1,2) - use default omega and specify alpha[1]/beta[2]</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.1</span>, beta <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.4</span>, <span class="fl">0.4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27  0.0019340643</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  0.0000668850</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29  0.0010577411</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30 -0.0016142765</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  0.0006535521</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01  0.0008639688</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02  0.0026345660</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03 -0.0010614920</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04 -0.0011161853</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  0.0004583598</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16  0.0019340643</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  0.0000668850</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18  0.0010577411</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19 -0.0016142765</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  0.0006535521</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21  0.0008639688</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22  0.0026345660</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23 -0.0010614920</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24 -0.0011161853</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  0.0004583598</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># GARCH(2,1) - use default omega and specify alpha[2]/beta[1]</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.12</span>, <span class="fl">0.04</span><span class="op">)</span>, beta <span class="op">=</span> <span class="fl">0.08</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27 -8.562066e-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28 -2.033166e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29 -9.540200e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30  3.912605e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31 -1.887491e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01 -1.231150e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02  1.352201e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03  7.294251e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  2.526151e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  4.799199e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16 -8.562066e-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17 -2.033166e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18 -9.540200e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19  3.912605e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20 -1.887491e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21 -1.231150e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22  1.352201e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23  7.294251e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  2.526151e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  4.799199e-04</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># snorm-ARCH(1) - use defaults with skew Normal</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>beta <span class="op">=</span> <span class="fl">0</span>, skew <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span>, cond.dist <span class="op">=</span> <span class="st">"snorm"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27 -7.485606e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  8.914988e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29 -5.381224e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30  2.703609e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31 -6.094172e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01  1.043383e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02  4.731667e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03  1.054015e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04 -5.737206e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05 -7.588362e-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16 -7.485606e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  8.914988e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18 -5.381224e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19  2.703609e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20 -6.094172e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21  1.043383e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22  4.731667e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23  1.054015e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24 -5.737206e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25 -7.588362e-05</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># sged-GARCH(1,1) - using defaults with skew GED</span></span></span>
 <span class="r-in"><span>   <span class="va">model</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>skew <span class="op">=</span> <span class="fl">0.93</span>, shape <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>, cond.dist <span class="op">=</span> <span class="st">"sged"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">model</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27 -0.0002272700</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  0.0027759594</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29  0.0013211663</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30  0.0015949448</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  0.0020719752</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01  0.0031343476</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02  0.0020836428</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03 -0.0020425228</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04 -0.0002816032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05 -0.0011687944</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16 -0.0002272700</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  0.0027759594</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18  0.0013211663</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19  0.0015949448</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  0.0020719752</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21  0.0031343476</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22  0.0020836428</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23 -0.0020425228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24 -0.0002816032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25 -0.0011687944</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># Taylor Schwert GARCH(1,1) - this belongs to the family of APARCH Models</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>delta <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27 -4.009875e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28 -7.730200e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29  9.493940e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30  1.129811e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  1.523020e-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01 -1.575024e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02 -7.708138e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03 -1.477749e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04 -8.557498e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05 -5.101195e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16 -4.009875e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17 -7.730200e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18  9.493940e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19  1.129811e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  1.523020e-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21 -1.575024e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22 -7.708138e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23 -1.477749e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24 -8.557498e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25 -5.101195e-06</span>
 <span class="r-in"><span>   </span></span>
 <span class="r-in"><span>   <span class="co"># AR(1)-t-APARCH(2, 1) - a little bit more complex specification ...</span></span></span>
 <span class="r-in"><span>   <span class="va">spec</span> <span class="op">=</span> <span class="fu"><a href="garchSpec.html">garchSpec</a></span><span class="op">(</span>model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>mu <span class="op">=</span> <span class="fl">1.0e-4</span>, ar <span class="op">=</span> <span class="fl">0.5</span>, omega <span class="op">=</span> <span class="fl">1.0e-6</span>, </span></span>
 <span class="r-in"><span>       alpha <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.10</span>, <span class="fl">0.05</span><span class="op">)</span>, gamma <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span>, beta <span class="op">=</span> <span class="fl">0.8</span>, delta <span class="op">=</span> <span class="fl">1.8</span>, </span></span>
 <span class="r-in"><span>       shape <span class="op">=</span> <span class="fl">4</span>, skew <span class="op">=</span> <span class="fl">0.85</span><span class="op">)</span>, cond.dist <span class="op">=</span> <span class="st">"sstd"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27  0.0001359655</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28  0.0005524952</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29  0.0018123402</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30 -0.0079753569</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31 -0.0187944795</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01 -0.0103353483</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02 -0.0088322302</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03 -0.0128158606</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  0.0044420012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05  0.0004834796</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16  0.0001359655</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17  0.0005524952</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18  0.0018123402</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19 -0.0079753569</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20 -0.0187944795</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21 -0.0103353483</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22 -0.0088322302</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23 -0.0128158606</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  0.0044420012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25  0.0004834796</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>   <span class="fu">garchSim</span><span class="op">(</span><span class="va">spec</span>, n <span class="op">=</span> <span class="fl">10</span>, extended <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GMT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                    garch       sigma        eps</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-27 -0.0039057370 0.001831888 -2.6544277</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-28 -0.0030935270 0.002266588 -0.5473682</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-29 -0.0025168619 0.002376449 -0.4502931</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-30  0.0011837586 0.002230510  1.0500689</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-05-31  0.0015200149 0.002207861  0.3750850</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-01  0.0023305544 0.002124541  0.6921715</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-02  0.0008536017 0.002035029 -0.2022946</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-03 -0.0004914010 0.001923368 -0.5293849</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-04  0.0009323699 0.001827788  0.5898224</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2023-06-05 -0.0062338241 0.001766998 -3.8483397</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-16 -0.0039057370 0.001831888 -2.6544277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-17 -0.0030935270 0.002266588 -0.5473682</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-18 -0.0025168619 0.002376449 -0.4502931</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-19  0.0011837586 0.002230510  1.0500689</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-20  0.0015200149 0.002207861  0.3750850</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-21  0.0023305544 0.002124541  0.6921715</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-22  0.0008536017 0.002035029 -0.2022946</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-23 -0.0004914010 0.001923368 -0.5293849</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-24  0.0009323699 0.001827788  0.5898224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-03-25 -0.0062338241 0.001766998 -3.8483397</span>
 <span class="r-in"><span>   </span></span>
 </code></pre></div>
     </div>

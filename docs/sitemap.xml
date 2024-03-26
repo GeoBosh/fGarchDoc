@@ -16,10 +16,16 @@
     <loc>https://geobosh.github.io/fGarchDoc/reference/00fGarch-package.html</loc>
   </url>
   <url>
+    <loc>https://geobosh.github.io/fGarchDoc/reference/VaR.html</loc>
+  </url>
+  <url>
     <loc>https://geobosh.github.io/fGarchDoc/reference/class-fGARCH.html</loc>
   </url>
   <url>
     <loc>https://geobosh.github.io/fGarchDoc/reference/class-fGARCHSPEC.html</loc>
+  </url>
+  <url>
+    <loc>https://geobosh.github.io/fGarchDoc/reference/class-fUGARCHSPEC.html</loc>
   </url>
   <url>
     <loc>https://geobosh.github.io/fGarchDoc/reference/dist-absMoments.html</loc>
@@ -73,9 +79,6 @@
     <loc>https://geobosh.github.io/fGarchDoc/reference/fGarchData.html</loc>
   </url>
   <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/fUGARCHSPEC-class.html</loc>
-  </url>
-  <url>
     <loc>https://geobosh.github.io/fGarchDoc/reference/garchFit.html</loc>
   </url>
   <url>
@@ -113,5 +116,8 @@
   </url>
   <url>
     <loc>https://geobosh.github.io/fGarchDoc/reference/methods-volatility.html</loc>
+  </url>
+  <url>
+    <loc>https://geobosh.github.io/fGarchDoc/reference/stats-tsdiag.html</loc>
   </url>
 </urlset>
