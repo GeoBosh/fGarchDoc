@@ -1,123 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/404.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/index.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/00fGarch-package.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/VaR.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/class-fGARCH.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/class-fGARCHSPEC.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/class-fUGARCHSPEC.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-absMoments.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-ged.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-gedFit.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-gedSlider.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-sged.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-sgedFit.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-sgedSlider.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-snorm.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-snormFit.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-snormSlider.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-sstd.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-sstdFit.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-sstdSlider.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-std.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-stdFit.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/dist-stdSlider.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/fGarchData.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/garchFit.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/garchFitControl.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/garchSim.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/garchSpec.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-coef.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-fitted.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-formula.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-plot.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-predict.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-residuals.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-summary.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/methods-volatility.html</loc>
-  </url>
-  <url>
-    <loc>https://geobosh.github.io/fGarchDoc/reference/stats-tsdiag.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://geobosh.github.io/fGarchDoc/404.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/authors.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/index.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/news/index.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/00fGarch-package.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/VaR.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/class-fGARCH.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/class-fGARCHSPEC.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/class-fUGARCHSPEC.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-Slider.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-absMoments.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-ged.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-gedFit.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-sged.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-sgedFit.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-snorm.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-snormFit.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-sstd.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-sstdFit.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-std.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/dist-stdFit.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/fGarchData.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/garchFit.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/garchFitControl.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/garchSim.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/garchSpec.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/index.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/methods-coef.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/methods-fitted.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/methods-formula.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/methods-plot.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/methods-predict.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/methods-residuals.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/methods-summary.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/methods-volatility.html</loc></url>
+<url><loc>https://geobosh.github.io/fGarchDoc/reference/stats-tsdiag.html</loc></url>
 </urlset>
+
