@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">fGarch</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4040.92.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4052.93.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +32,9 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="4040.92.9000" id="changes-in-fgarch-version-4040929000-2024-04-29-svn-r6482r">CHANGES in fGarch VERSION 4040.92.9000 (2024-04-29, svn r6482–r????)<a class="anchor" aria-label="anchor" href="#changes-in-fgarch-version-4040929000-2024-04-29-svn-r6482r"></a></h2>
+<h2 class="pkg-version" data-toc-text="4052.93" id="changes-in-fgarch-version-405293-2025-12-12-svn-r6482r6544">CHANGES in fGarch VERSION 4052.93 (2025-12-12, svn r6482–r6544)<a class="anchor" aria-label="anchor" href="#changes-in-fgarch-version-405293-2025-12-12-svn-r6482r6544"></a></h2><p class="text-muted">CRAN release: 2025-12-12</p>
 <ul><li><p>emphasised that the skew normal distribution in fGarch is different from what is usually called skew normal distribution. Similarly for the other skew distributions.</p></li>
-<li><p>replaced a call to ‘warnings’ (plural) with ‘warning’ (singular, a different function) in <code>garchSpec</code>. The old one was clearly a typo and was not issuing the intended warning about the violation of the stationarity condition for GARCH models.</p></li>
+<li><p>replaced a call to ‘warnings’ (plural) with ‘warning’ (singular) in <code>garchSpec</code>. The old one was clearly a typo and was not issuing the intended warning about the violation of the stationarity condition for GARCH models.</p></li>
 <li><p>improved the layout of the reference section of the pkgdown site.</p></li>
 <li><p>edited the help page of class <code>"fGARCH"</code>. In particular, added cross-references to the help pages of the individual methods.</p></li>
 </ul></div>
@@ -49,7 +49,7 @@
 <ul><li>added computation of Value-at-Risk (VaR) and expected shortfall (ES) for fitted GARCH and APARCH models (in-sample and in the predict method). Just use something like <code>Var(fitted_object)</code>, <code>ES(fitted_object)</code> or <code>predict(fitted_object, ..., p_loss = 0.05)</code>.</li>
 </ul></div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="4022.90" id="changes-in-fgarch-version-402290-2023-10-15-svn-r6333r6435">CHANGES in fGarch VERSION 4022.90 (2023-10-15, svn r6333–r6435)<a class="anchor" aria-label="anchor" href="#changes-in-fgarch-version-402290-2023-10-15-svn-r6333r6435"></a></h2>
+<h2 class="pkg-version" data-toc-text="4031.90" id="changes-in-fgarch-version-403190-2023-10-15-svn-r6333r6435">CHANGES in fGarch VERSION 4031.90 (2023-10-15, svn r6333–r6435)<a class="anchor" aria-label="anchor" href="#changes-in-fgarch-version-403190-2023-10-15-svn-r6333r6435"></a></h2><p class="text-muted">CRAN release: 2023-10-15</p>
 <ul><li><p>added <code>"fGARCH"</code> method for <code><a href="https://rdrr.io/r/stats/tsdiag.html" class="external-link">stats::tsdiag</a></code>. The method produces diagnostic plot for fitted GARCH/APARCH models and computes some diagnostic tests. The plots can be chosen interactively and/or via arguments. The test results are in the returned value. The method is in development in that more plots may be made available and additional tests included in the returned value.</p></li>
 <li><p>refactored the <code>"fGARCH"</code> method for ‘summary’ to return an object from S3 class ‘summary_fGARCH’ equipped with a ‘print’ method. The printout is the same as before, except that now the numbers in the statistics column for the residual diagnostics are aligned on the decimal point (previously they were left-aligned due to a buglet).</p></li>
 <li><p>the <code>"fGARCH"</code> method for <code>fitted</code> was returning the data, not the fitted values. Fixes issue 6789, reported by Kouhei Hashinokuchi (hakoshie).</p></li>
@@ -180,7 +180,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>

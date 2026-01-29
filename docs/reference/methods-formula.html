@@ -11,7 +11,7 @@ Extracts formula from a formula GARCH object."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">fGarch</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4040.92.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">4052.93.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,7 +108,7 @@ Extracts formula from a formula GARCH object."></head><body>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data ~ garch(1, 1)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"data")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "data = garchSim()"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x5c825ea53520&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x613d7eb668f0&gt;</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## A Bivariate series and mis-specified formula:</span></span></span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="garchSim.html">garchSim</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">500</span><span class="op">)</span></span></span>
@@ -132,12 +132,12 @@ Extracts formula from a formula GARCH object."></head><body>
 <span class="r-in"><span><span class="va">z</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GMT </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        x             x</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-01 -0.0009479484  7.362291e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-02  0.0030573851  3.241022e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-03  0.0046413667  3.294819e-07</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-04  0.0014175724 -2.040258e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-05 -0.0003273780 -7.098226e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-06  0.0020663036  1.077096e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-16 -0.0009479484  7.362291e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-17  0.0030573851  3.241022e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-18  0.0046413667  3.294819e-07</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-19  0.0014175724 -2.040258e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-20 -0.0003273780 -7.098226e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-21  0.0020663036  1.077096e-04</span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span><span class="va">x</span> <span class="op">~</span><span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">z</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
@@ -150,12 +150,12 @@ Extracts formula from a formula GARCH object."></head><body>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">z.mat</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span></span>
 <span class="r-in"><span><span class="va">z.mat</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span>,<span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                     [,1]          [,2]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-01 -0.0009479484  7.362291e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-02  0.0030573851  3.241022e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-03  0.0046413667  3.294819e-07</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-04  0.0014175724 -2.040258e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-05 -0.0003273780 -7.098226e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-07-06  0.0020663036  1.077096e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-16 -0.0009479484  7.362291e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-17  0.0030573851  3.241022e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-18  0.0046413667  3.294819e-07</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-19  0.0014175724 -2.040258e-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-20 -0.0003273780 -7.098226e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2024-09-21  0.0020663036  1.077096e-04</span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="garchFit.html">garchFit</a></span><span class="op">(</span><span class="va">x</span> <span class="op">~</span> <span class="fu">garch</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">z.mat</span>, trace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
@@ -173,7 +173,7 @@ Extracts formula from a formula GARCH object."></head><body>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>
